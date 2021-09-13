@@ -25,11 +25,10 @@ namespace ECDH {
 
         private void InitBasePoint() {
             var inf = new Point(-1, -1, Curve);
-            var zero = new Point(0, 0, Curve);
 
             do {
                 Curve.G = Curve.Points[Rand(1, Curve.N)];
-            } while (Curve.G == zero || Curve.G == inf);
+            } while (Curve.G == zero || Curve.G.y == 0);
         }
 
         private void InitPrivateKeys() {
