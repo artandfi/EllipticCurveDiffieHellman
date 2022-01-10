@@ -28,7 +28,7 @@ namespace ECDH {
 
             do {
                 Curve.G = Curve.Points[Rand(1, Curve.N)];
-            } while (Curve.G == zero || Curve.G.y == 0);
+            } while (Curve.G == inf || Curve.G.y == 0);
         }
 
         private void InitPrivateKeys() {
